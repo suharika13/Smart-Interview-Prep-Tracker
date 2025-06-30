@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Interview Prep Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Smart Interview Prep Tracker</h1>
+    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  </header>
+
+  <main>
+    <section class="kanban-board">
+      <div class="column" id="todo">
+        <h2>To Do</h2>
+        <div class="task-list" id="todo-list"></div>
+        <button onclick="addTask('todo')">+ Add Task</button>
+      </div>
+      <div class="column" id="in-progress">
+        <h2>In Progress</h2>
+        <div class="task-list" id="in-progress-list"></div>
+        <button onclick="addTask('in-progress')">+ Add Task</button>
+      </div>
+      <div class="column" id="done">
+        <h2>Done</h2>
+        <div class="task-list" id="done-list"></div>
+        <button onclick="addTask('done')">+ Add Task</button>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button onclick="exportTasks()">Export Tasks</button>
+      <input type="file" id="importFile" onchange="importTasks(event)" />
+    </section>
+
+    <section class="chart-container">
+      <canvas id="progressChart"></canvas>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
